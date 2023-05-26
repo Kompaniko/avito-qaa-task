@@ -1,6 +1,7 @@
 package com.avito;
 
 import org.json.*;
+import com.avito.ErrorJsonFileWriter;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,11 +15,9 @@ public class TestCaseStructure {
         String valuesPath = "/Users/nikita/Values.json";
 
         try {
-            String testCaseStructureJson = new String(Files.readAllBytes(Paths.get(testCaseStructureJsonPath)));
-            String valuesJson = new String(Files.readAllBytes(Paths.get(valuesPath)));
-
-            JSONObject testCaseStructure = new JSONObject(testCaseStructureJson);
-            JSONArray values = new JSONArray(valuesJson);
+            JsonReaderFile jsonFileReader = new JsonReaderFile();
+            JSONObject testCaseStructure = jsonFileReader.readJsonFile(testCaseStructureJsonPath);
+            JSONArray values = jsonFileReader.readJsonArrayFile(valuesPath);
 
             JSONObject structureWithValues = new JSONObject();
 
@@ -46,11 +45,10 @@ public class TestCaseStructure {
                 structureWithValues.put("parameter" + (i + 1), parameter);
             }
 
-            FileWriter fileWriter = new FileWriter("StructureWithValues.json");
-            fileWriter.write(structureWithValues.toString(4));
-            fileWriter.close();
+            JsonFileWriter jsonFileWriter = new JsonFileWriter();
+            jsonFileWriter.writeJsonToFile(structureWithValues, "StructureWithValues.json");
 
-            System.out.println("Structure values file has been created successfully");
+            System.out.println("Файл значений структуры успешно создан");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
@@ -83,16 +81,13 @@ public class TestCaseStructure {
 
     private static void createErrorFile(String errorMessage) {
         try {
-            JSONObject errorObject = new JSONObject();
-            errorObject.put("error", errorMessage);
+            ErrorJsonFileWriter errorJsonFileWriter = new ErrorJsonFileWriter();
+            errorJsonFileWriter.writeErrorToJsonFile(errorMessage, "error.json");
 
-            FileWriter fileWriter = new FileWriter("error.json");
-            fileWriter.write(errorObject.toString(4));
-            fileWriter.close();
-
-            System.out.println("Error file has been created successfully");
-        } catch (IOException | JSONException e) {
+            System.out.println("Файл ошибки успешно создан");
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 }
