@@ -1,0 +1,132 @@
+{
+    "parameter6": {
+        "values": [
+            {
+                "id": 3624,
+                "title": "develop"
+            },
+            {
+                "id": 3627,
+                "title": "production"
+            }
+        ],
+        "id": 2128,
+        "title": "Tags",
+        "value": ""
+    },
+    "parameter5": {
+        "values": [
+            {
+                "id": 877,
+                "title": "High"
+            },
+            {
+                "id": 879,
+                "title": "Low"
+            }
+        ],
+        "id": 421,
+        "title": "Priority",
+        "value": ""
+    },
+    "parameter4": {
+        "values": [
+            {
+                "id": 644,
+                "title": "Android",
+                "params": [{
+                    "values": [
+                        {
+                            "id": 7197,
+                            "title": "UI"
+                        },
+                        {
+                            "id": 7199,
+                            "title": "Business"
+                        }
+                    ],
+                    "id": 1271,
+                    "title": "Test type",
+                    "value": ""
+                }]
+            },
+            {
+                "id": 646,
+                "title": "iOS",
+                "params": [{
+                    "values": [
+                        {
+                            "id": 7201,
+                            "title": "UI"
+                        },
+                        {
+                            "id": 7204,
+                            "title": "Business"
+                        }
+                    ],
+                    "id": 1373,
+                    "title": "Test type",
+                    "value": ""
+                }]
+            }
+        ],
+        "id": 122,
+        "title": "Platform",
+        "value": ""
+    },
+    "parameter3": {
+        "values": [
+            {
+                "id": 345,
+                "title": "SellerX",
+                "params": [{
+                    "values": [
+                        {
+                            "id": 4931,
+                            "title": "Publish item"
+                        },
+                        {
+                            "id": 4932,
+                            "title": "Edit item"
+                        }
+                    ],
+                    "id": 230,
+                    "title": "Feature",
+                    "value": ""
+                }]
+            },
+            {
+                "id": 346,
+                "title": "Trust&Safety",
+                "params": [{
+                    "values": [
+                        {
+                            "id": 4894,
+                            "title": "Authorize user"
+                        },
+                        {
+                            "id": 4896,
+                            "title": "Restore password"
+                        }
+                    ],
+                    "id": 261,
+                    "title": "Feature",
+                    "value": ""
+                }]
+            }
+        ],
+        "id": 73,
+        "title": "unitId",
+        "value": ""
+    },
+    "parameter2": {
+        "id": 146,
+        "title": "Testcase name",
+        "value": ""
+    },
+    "parameter1": {
+        "id": 34,
+        "title": "testcaseId",
+        "value": ""
+    }
+}
